@@ -1,5 +1,5 @@
-import Store from '../../store';
-import * as selectors from '../../store/selectors';
+import Store from '../redux';
+import * as selectors from '../redux/selectors';
 
 import {
   IonPage,

@@ -12,9 +12,9 @@ import {
   IonToolbar,
 } from '@ionic/react';
 
-import Store from '../../store';
-import * as actions from '../../store/actions';
-import * as selectors from '../../store/selectors';
+import Store from '../redux';
+import * as actions from '../redux/actions';
+import * as selectors from '../redux/selectors';
 
 const ListItems = ({ list }) => {
   return (

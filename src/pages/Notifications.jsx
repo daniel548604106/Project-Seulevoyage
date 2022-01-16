@@ -11,8 +11,8 @@ import {
   IonNote,
   IonLabel,
 } from '@ionic/react';
-import Store from '../../store';
-import { getNotifications } from '../../store/selectors';
+import Store from '../redux';
+import { getNotifications } from '../redux/selectors';
 
 import { close } from 'ionicons/icons';
 
