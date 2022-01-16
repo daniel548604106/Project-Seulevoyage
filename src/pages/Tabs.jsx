@@ -1,10 +1,9 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { cog, flash, list } from 'ionicons/icons';
-import routes from '../routes/index.jsx';
+import routes from '@/routes/index.jsx';
 
-const allTabs = [
+const tabRoutes = [
   {
     icon: '/img/tabs/home.svg',
     label: 'Home',
@@ -47,7 +46,7 @@ const Tabs = () => {
         <Route path="/tabs" render={() => <Redirect to="/tabs/feed" />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
-        {allTabs.map(({ href, label, icon, tab }) => (
+        {tabRoutes.map(({ href, label, icon, tab }) => (
           <IonTabButton key={label} tab={tab} href={href}>
             <IonIcon icon={icon} />
             <IonLabel>{label}</IonLabel>
