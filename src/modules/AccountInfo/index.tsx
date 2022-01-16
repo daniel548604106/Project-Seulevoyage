@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface AccountInfoProps {
@@ -16,7 +17,10 @@ const AccountInfo = (props: AccountInfoProps) => {
         {`${title}`}
         {required && `*`}
       </p>
-      <div className="rounded-full border shadow-lg px-4 py-2">{content}</div>
+      <div className="rounded-full border shadow-lg flex justify-between px-4 py-2">
+        <p>{content}</p>
+        {icon && <Image width="12" height="12" src={icon} alt={icon} />}
+      </div>
     </div>
   );
 };

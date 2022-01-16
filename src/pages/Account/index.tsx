@@ -1,3 +1,4 @@
+import { calendarOutline, mailOutline } from 'ionicons/icons';
 import Image from 'next/image';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
@@ -22,12 +23,14 @@ const personalInfos = [
     content: 'daniel548604106@gmail.com',
     required: true,
     href: 'email',
+    icon: mailOutline,
   },
   {
     title: 'Date of birth',
     content: '1997/04/10',
     required: true,
     href: 'birth',
+    icon: calendarOutline,
   },
   {
     title: 'Gender',
@@ -67,13 +70,14 @@ const Settings = () => {
             </div>
           </div>
           <div>
-            {personalInfos.map(({ title, content, required, href }) => (
+            {personalInfos.map(({ title, content, required, icon, href }) => (
               <div key={title} className="my-3">
                 <AccountInfo
                   onClick={() => onHandleInfoClick(href)}
                   required
                   title={title}
                   content={content}
+                  icon={icon || ''}
                 />
               </div>
             ))}

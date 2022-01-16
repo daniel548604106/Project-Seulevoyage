@@ -11,7 +11,7 @@ const Navigation = (props: NavigationProps) => {
   return (
     <IonToolbar>
       <IonButtons slot="start">
-        <IonBackButton icon="/img/back.svg" text={null} />
+        <IonBackButton className="text-sm" icon="/img/back.svg" text="" />
       </IonButtons>
       <IonTitle>{title}</IonTitle>
     </IonToolbar>
