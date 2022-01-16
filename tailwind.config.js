@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        pink: '#d45071',
-        orange: '#e97961',
+        pink: 'var(--main-pink)',
+        orange: 'var(--main-orange)',
       },
       width: {
         'c-100': '100px',

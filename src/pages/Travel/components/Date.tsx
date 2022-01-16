@@ -10,7 +10,7 @@ const Date = () => {
 
   return (
     <IonCustomContent>
-      <div className="bg-red-500 h-full">
+      <div className=" h-full">
         danie
         <IonDatetime
           value={selectedDate}

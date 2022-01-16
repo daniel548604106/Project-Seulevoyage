@@ -70,6 +70,11 @@ const Travel = () => {
   const [isCreateModalOpen, setCreateModalOpen] = useState(false);
   const [creationStep, setCreationStep] = useState(0);
 
+  const handleModalButtonClick = () => {
+    creationStep === CreationSteps.Setting
+      ? console.log('create new')
+      : setCreationStep(creationStep + 1);
+  };
   const renderModalContent = useCallback(() => {
     switch (creationStep) {
       case CreationSteps.Destination:
@@ -122,12 +127,20 @@ const Travel = () => {
         isOpen={isCreateModalOpen}
         swipeToClose={true}
       >
-        <ModalHeader
-          currentStep={creationStep}
-          setCreateModalOpen={setCreateModalOpen}
-          setCurrentStep={setCreationStep}
-        />
-        {renderModalContent()}
+        <div className="relative">
+          <ModalHeader
+            currentStep={creationStep}
+            setCreateModalOpen={setCreateModalOpen}
+            setCurrentStep={setCreationStep}
+          />
+          {renderModalContent()}
+        </div>
+        <div className="absolute bottom-10 right-0 left-0 mx-5">
+          <Button
+            onClick={() => handleModalButtonClick()}
+            text={creationStep === CreationSteps.Setting ? 'Complete' : 'Next step'}
+          />
+        </div>
       </IonModal>
     </IonPage>
   );
