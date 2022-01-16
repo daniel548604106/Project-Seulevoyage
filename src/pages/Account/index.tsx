@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
+import AccountInfo from '@/modules/AccountInfo/index.tsx';
 import { setSettings } from '@/redux/actions';
 import Store from '@/redux/index';
 import * as selectors from '@/redux/selectors';
@@ -8,8 +10,39 @@ import {
     IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToggle, IonToolbar
 } from '@ionic/react';
 
+const personalInfos = [
+  {
+    title: 'Full Name',
+    content: 'Daniel',
+    required: true,
+    href: 'name',
+  },
+  {
+    title: 'Email',
+    content: 'daniel548604106@gmail.com',
+    required: true,
+    href: 'email',
+  },
+  {
+    title: 'Date of birth',
+    content: '1997/04/10',
+    required: true,
+    href: 'birth',
+  },
+  {
+    title: 'Gender',
+    content: 'Unfilled',
+    required: true,
+    href: 'gender',
+  },
+];
 const Settings = () => {
+  const history = useHistory();
   const settings = Store.useState(selectors.getSettings);
+
+  const onHandleInfoClick = href => {
+    history.push(`/tabs/account/edit/${href}`);
+  };
 
   return (
     <IonPage>
@@ -32,6 +65,18 @@ const Settings = () => {
               <h2 className="mb-1 text-xl font-bold">Daniel</h2>
               <p>daniel548604106@gmail.com</p>
             </div>
+          </div>
+          <div>
+            {personalInfos.map(({ title, content, required, href }) => (
+              <div key={title} className="my-3">
+                <AccountInfo
+                  onClick={() => onHandleInfoClick(href)}
+                  required
+                  title={title}
+                  content={content}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </IonContent>
