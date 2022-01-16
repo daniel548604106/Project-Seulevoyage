@@ -2,35 +2,57 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { cog, flash, list } from 'ionicons/icons';
+import routes from '../routes/index.jsx';
 
-import Home from './Feed';
-import Lists from './Lists';
-import ListDetail from './ListDetail';
-import Settings from './Settings';
+const allTabs = [
+  {
+    icon: '/img/tabs/home.svg',
+    label: 'Home',
+    href: '/tabs/home',
+    tab: 'home',
+  },
+  {
+    icon: '/img/tabs/explore.svg',
+    label: 'Explore',
+    href: '/tabs/explore',
+    tab: 'explore',
+  },
+  {
+    icon: '/img/tabs/travel.svg',
+    label: 'Travel',
+    href: '/tabs/travel',
+    tab: 'travel',
+  },
+  {
+    icon: '/img/tabs/gallery.svg',
+    label: 'Gallery',
+    href: '/tabs/gallery',
+    tab: 'gallery',
+  },
+  {
+    icon: '/img/tabs/account.svg',
+    label: 'Account',
+    href: '/tabs/account',
+    tab: 'account',
+  },
+];
 
 const Tabs = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Route path="/tabs/feed" component={Home} exact={true} />
-        <Route path="/tabs/lists" component={Lists} exact={true} />
-        <Route path="/tabs/lists/:listId" component={ListDetail} exact={true} />
-        <Route path="/tabs/settings" component={Settings} exact={true} />
+        {routes.map(({ path, component, exact }) => (
+          <Route key={path} path={path} component={component} exact={exact} />
+        ))}
         <Route path="/tabs" render={() => <Redirect to="/tabs/feed" />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/tabs/feed">
-          <IonIcon icon={flash} />
-          <IonLabel>Feed</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/tabs/lists">
-          <IonIcon icon={list} />
-          <IonLabel>Lists</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/settings">
-          <IonIcon icon={cog} />
-          <IonLabel>Settings</IonLabel>
-        </IonTabButton>
+        {allTabs.map(({ href, label, icon, tab }) => (
+          <IonTabButton key={label} tab={tab} href={href}>
+            <IonIcon icon={icon} />
+            <IonLabel>{label}</IonLabel>
+          </IonTabButton>
+        ))}
       </IonTabBar>
     </IonTabs>
   );
