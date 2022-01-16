@@ -1,14 +1,91 @@
 import IonCustomContent from 'modules/IonCustomContent/index.tsx';
 import Navigation from 'modules/Navigation/index.tsx';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import {
-    IonButton, IonContent, IonHeader, IonLabel, IonPage, IonSegment, IonSegmentButton
+    IonButton, IonContent, IonHeader, IonLabel, IonModal, IonPage, IonSegment, IonSegmentButton
 } from '@ionic/react';
+
+import Date from './components/Date.tsx';
+import Destination from './components/Destination.tsx';
+import JourneySetting from './components/JourneySetting.tsx';
+
+interface ModalHeaderProps {
+  currentStep: number;
+  setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
+  setCreateModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+enum CreationSteps {
+  'Destination',
+  'Date',
+  'Setting',
+}
+
+const ModalHeader = (props: ModalHeaderProps) => {
+  const { currentStep, setCurrentStep, setCreateModalOpen } = props;
+
+  const renderTitle = () => {
+    switch (currentStep) {
+      case CreationSteps.Destination:
+        return 'Destination';
+        break;
+      case CreationSteps.Date:
+        return 'Select Date';
+        break;
+      case CreationSteps.Setting:
+        return 'Journey Setting';
+        break;
+      default:
+        return '';
+    }
+  };
+  return (
+    <div className="flex items-center justify-between p-5">
+      <Image
+        width="24"
+        height="24"
+        onClick={() =>
+          currentStep === 0 ? setCreateModalOpen(false) : setCurrentStep(currentStep - 1)
+        }
+        src={currentStep === 0 ? '/img/close.svg' : '/img/back.svg'}
+        alt="close"
+      />
+      <h2>{renderTitle()}</h2>
+      {currentStep === 0 ? (
+        <span onClick={() => setCurrentStep(currentStep + 1)}>Skip</span>
+      ) : (
+        <span></span>
+      )}
+    </div>
+  );
+};
 
 const Travel = () => {
   const [selectedSegment, setSelectedSegment] = useState('future');
+  const [isCreateModalOpen, setCreateModalOpen] = useState(false);
+  const [creationStep, setCreationStep] = useState(0);
+
+  const renderModalContent = useCallback(() => {
+    switch (creationStep) {
+      case CreationSteps.Destination:
+        return <Destination />;
+        break;
+      case CreationSteps.Date:
+        return <Date />;
+        break;
+      case CreationSteps.Setting:
+        return <JourneySetting />;
+        break;
+      default:
+    }
+  }, [creationStep]);
+
+  useEffect(() => {
+    !isCreateModalOpen && setCreationStep(0);
+  }, [isCreateModalOpen]);
+
   return (
     <IonPage>
       <IonHeader>
@@ -28,10 +105,22 @@ const Travel = () => {
           <p className="text-normal font-semibold">You do not have any journey on the list yet!</p>
           <p className="text-sm text-gray-500">Start your journey </p>
         </div>
-        <IonButton expand="full" fill="outline">
+        <IonButton onClick={() => setCreateModalOpen(true)} expand="full" fill="outline">
           Outline + Full
         </IonButton>
       </IonCustomContent>
+      <IonModal
+        onDidDismiss={() => setCreateModalOpen(false)}
+        isOpen={isCreateModalOpen}
+        swipeToClose={true}
+      >
+        <ModalHeader
+          currentStep={creationStep}
+          setCreateModalOpen={setCreateModalOpen}
+          setCurrentStep={setCreationStep}
+        />
+        {renderModalContent()}
+      </IonModal>
     </IonPage>
   );
 };
