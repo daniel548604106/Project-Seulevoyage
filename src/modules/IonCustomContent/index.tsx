@@ -4,10 +4,11 @@ import { IonContent } from '@ionic/react';
 
 interface IonCustomContentProps {
   children: JSX.Element;
+  className?: string;
 }
 const IonCustomContent = (props: IonCustomContentProps) => {
-  const { children } = props;
-  return <IonContent className="ion-padding">{children}</IonContent>;
+  const { children, className } = props;
+  return <IonContent className={`${className} ion-padding`}>{children}</IonContent>;
 };
 
 export default IonCustomContent;
