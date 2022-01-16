@@ -1,7 +1,7 @@
-import Home from '../pages/Feed.jsx';
-import Account from '../pages/Settings.jsx';
-import ListDetail from '../pages/ListDetail.jsx';
-import List from '../pages/Lists.jsx';
+import Home from '@/pages/Feed.jsx';
+import Account from '@/pages/Account/index.tsx';
+import ListDetail from '@/pages/ListDetail.jsx';
+import List from '@/pages/Lists.jsx';
 
 const routes = [
   { path: '/tabs/home', component: Home, exact: true },

@@ -1,0 +1,20 @@
+.tabs-root {
+  .tabs-bar {
+    @apply border-t border-solid;
+  }
+  .tabs-bar--hidden {
+    display: none;
+  }
+
+  .tabs-bar__button {
+    --color: var(--main-gray);
+    --color-selected: var(--main-pink);
+
+    &[selected='true'] {
+      color: var(--main-pink);
+    }
+    &__label {
+      @apply text-xs transform;
+    }
+  }
+}
