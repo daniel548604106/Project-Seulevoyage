@@ -1,14 +1,14 @@
+import Navigation from 'modules/Navigation';
 import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Navigation from '@/modules/Navigation/index.tsx';
 import {
     IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar
 } from '@ionic/react';
 
-import Birth from './components/Birth.tsx';
-import Email from './components/Email.tsx';
-import Name from './components/Name.tsx';
+import Birth from './components/Birth';
+import Email from './components/Email';
+import Name from './components/Name';
 
 const Edit = () => {
   const params = useParams<{ type: string }>();

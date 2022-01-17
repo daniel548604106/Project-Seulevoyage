@@ -1,3 +1,17 @@
 {
-  "extends": "next"
+  "extends": [
+    "next",
+    "airbnb-typescript-prettier",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import",
+    "react-hooks",
+    "@typescript-eslint"
+  ]
 }

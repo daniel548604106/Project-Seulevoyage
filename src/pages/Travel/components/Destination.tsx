@@ -1,6 +1,6 @@
 import { searchOutline } from 'ionicons/icons';
-import IonCustomContent from 'modules/IonCustomContent/index.tsx';
-import Tag from 'modules/Tag/index.tsx';
+import IonCustomContent from 'modules/IonCustomContent';
+import Tag from 'modules/Tag';
 import Image from 'next/image';
 import React, { useState } from 'react';
 

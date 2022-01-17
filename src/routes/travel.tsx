@@ -1,4 +1,4 @@
-import Travel from '@/pages/Travel/index.tsx';
+import Travel from '@/pages/Travel';
 
 const routes = [{ path: '/tabs/travel', component: Travel, exact: true }];
 

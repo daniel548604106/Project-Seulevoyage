@@ -1,7 +1,7 @@
 import { caretDownOutline } from 'ionicons/icons';
-import Button from 'modules/Button/index.tsx';
-import IonCustomContent from 'modules/IonCustomContent/index.tsx';
-import Navigation from 'modules/Navigation/index.tsx';
+import Button from 'modules/Button';
+import IonCustomContent from 'modules/IonCustomContent';
+import Navigation from 'modules/Navigation';
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
 
@@ -10,9 +10,9 @@ import {
     IonSegmentButton
 } from '@ionic/react';
 
-import Date from './components/Date.tsx';
-import Destination from './components/Destination.tsx';
-import JourneySetting from './components/JourneySetting.tsx';
+import Date from './components/Date';
+import Destination from './components/Destination';
+import JourneySetting from './components/JourneySetting';
 
 interface ModalHeaderProps {
   currentStep: number;
@@ -100,26 +100,31 @@ const Travel = () => {
         <Navigation title="Travel" />
       </IonHeader>
       <IonCustomContent className="relative">
-        <div className="h-full flex flex-col">
-          <IonSegment value={selectedSegment} onIonChange={e => setSelectedSegment(e.detail.value)}>
-            <IonSegmentButton value="future">
-              <IonLabel>Ongoing/Future</IonLabel>
-            </IonSegmentButton>
-            <IonSegmentButton value="past">
-              <IonLabel>Past Journey</IonLabel>
-            </IonSegmentButton>
-          </IonSegment>
-          <div className="flex flex-1 flex-col items-center justify-center space-y-4">
-            <Image width="200" height="185" src="/img/travel/no-trip.svg" alt="port" />
-            <p className="text-normal font-semibold">
-              You do not have any journey on the list yet!
-            </p>
-            <p className="text-sm text-gray-500">Start your journey </p>
-            <Image width="15" height="15" src={caretDownOutline} alt="down" />
+        <div>
+          <div className="h-full flex flex-col">
+            <IonSegment
+              value={selectedSegment}
+              onIonChange={e => setSelectedSegment(e.detail.value)}
+            >
+              <IonSegmentButton value="future">
+                <IonLabel>Ongoing/Future</IonLabel>
+              </IonSegmentButton>
+              <IonSegmentButton value="past">
+                <IonLabel>Past Journey</IonLabel>
+              </IonSegmentButton>
+            </IonSegment>
+            <div className="flex flex-1 flex-col items-center justify-center space-y-4">
+              <Image width="200" height="185" src="/img/travel/no-trip.svg" alt="port" />
+              <p className="text-normal font-semibold">
+                You do not have any journey on the list yet!
+              </p>
+              <p className="text-sm text-gray-500">Start your journey </p>
+              <Image width="15" height="15" src={caretDownOutline} alt="down" />
+            </div>
           </div>
-        </div>
-        <div className="absolute bottom-10 right-0 left-0 mx-5">
-          <Button onClick={() => setCreateModalOpen(true)} text="Create My Journey" />
+          <div className="absolute bottom-10 right-0 left-0 mx-5">
+            <Button onClick={() => setCreateModalOpen(true)} text="Create My Journey" />
+          </div>
         </div>
       </IonCustomContent>
       <IonModal
