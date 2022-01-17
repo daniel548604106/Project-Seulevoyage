@@ -1,7 +1,8 @@
-import Home from '@/pages/Feed.jsx';
 import Account from '@/pages/Account/index.tsx';
+import Home from '@/pages/Feed.jsx';
 import ListDetail from '@/pages/ListDetail.jsx';
 import List from '@/pages/Lists.jsx';
+import Login from '@/pages/Login/index.tsx';
 
 const routes = [
   { path: '/tabs/home', component: Home, exact: true },
@@ -20,6 +21,11 @@ const routes = [
     component: Account,
     exact: true,
   },
-];
+  {
+    path: '/login',
+    component: Login,
+    exact: true,
+  },
+]
 
-export default routes;
+export default routes

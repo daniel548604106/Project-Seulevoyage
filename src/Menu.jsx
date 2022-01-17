@@ -1,4 +1,4 @@
-import { StatusBar, Style } from '@capacitor/status-bar';
+import { StatusBar, Style } from '@capacitor/status-bar'
 import {
   IonContent,
   IonHeader,
@@ -10,9 +10,9 @@ import {
   IonMenuToggle,
   IonTitle,
   IonToolbar,
-} from '@ionic/react';
-import { useEffect, useState } from 'react';
-import { cog, flash, list } from 'ionicons/icons';
+} from '@ionic/react'
+import { useEffect, useState } from 'react'
+import { cog, flash, list } from 'ionicons/icons'
 
 const pages = [
   {
@@ -30,32 +30,37 @@ const pages = [
     icon: cog,
     url: '/tabs/settings',
   },
-];
+]
 
 const Menu = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false)
 
   const handleOpen = async () => {
     try {
       await StatusBar.setStyle({
         style: isDark ? Style.Dark : Style.Light,
-      });
+      })
     } catch {}
-  };
+  }
   const handleClose = async () => {
     try {
       await StatusBar.setStyle({
         style: isDark ? Style.Dark : Style.Light,
-      });
+      })
     } catch {}
-  };
+  }
 
-  useEffect(() => {
-    setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
-  }, []);
+  // useEffect(() => {
+  //   setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  // }, []);
 
   return (
-    <IonMenu side="start" contentId="main" onIonDidOpen={handleOpen} onIonDidClose={handleClose}>
+    <IonMenu
+      side="start"
+      contentId="main"
+      onIonDidOpen={handleOpen}
+      onIonDidClose={handleClose}
+    >
       <IonHeader>
         <IonToolbar>
           <IonTitle>Menu</IonTitle>
@@ -65,7 +70,12 @@ const Menu = () => {
         <IonList>
           {pages.map((p, k) => (
             <IonMenuToggle autoHide={false} key={k}>
-              <IonItem routerLink={p.url} routerDirection="none" detail={false} lines="none">
+              <IonItem
+                routerLink={p.url}
+                routerDirection="none"
+                detail={false}
+                lines="none"
+              >
                 <IonIcon icon={p.icon} slot="start" />
                 <IonLabel>{p.title}</IonLabel>
               </IonItem>
@@ -74,7 +84,7 @@ const Menu = () => {
         </IonList>
       </IonContent>
     </IonMenu>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

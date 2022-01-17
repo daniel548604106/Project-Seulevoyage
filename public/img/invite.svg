@@ -1,0 +1,14 @@
+<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="16.5" cy="16.5" r="16" stroke="url(#paint0_linear_143_699)" stroke-linejoin="bevel"/>
+<path d="M13 15H10V12H8V15H5V17H8V20H10V17H13V15ZM23 16C24.66 16 25.99 14.66 25.99 13C25.99 11.34 24.66 10 23 10C22.68 10 22.37 10.05 22.09 10.14C22.66 10.95 22.99 11.93 22.99 13C22.99 14.07 22.65 15.04 22.09 15.86C22.37 15.95 22.68 16 23 16ZM18 16C19.66 16 20.99 14.66 20.99 13C20.99 11.34 19.66 10 18 10C16.34 10 15 11.34 15 13C15 14.66 16.34 16 18 16ZM24.62 18.16C25.45 18.89 26 19.82 26 21V23H29V21C29 19.46 26.63 18.51 24.62 18.16ZM18 18C16 18 12 19 12 21V23H24V21C24 19 20 18 18 18Z" fill="url(#paint1_linear_143_699)"/>
+<defs>
+<linearGradient id="paint0_linear_143_699" x1="31.6698" y1="1.6739" x2="0.201255" y2="3.12943" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D45071"/>
+<stop offset="1" stop-color="#E97961"/>
+</linearGradient>
+<linearGradient id="paint1_linear_143_699" x1="28.7443" y1="10.2826" x2="4.50623" y2="12.3523" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D45071"/>
+<stop offset="1" stop-color="#E97961"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,19 +1,19 @@
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
-import { StatusBar, Style } from '@capacitor/status-bar';
+import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react'
+import { StatusBar, Style } from '@capacitor/status-bar'
 
-import { IonReactRouter } from '@ionic/react-router';
-import { Redirect, Route } from 'react-router-dom';
-import Menu from './Menu';
+import { IonReactRouter } from '@ionic/react-router'
+import { Redirect, Route } from 'react-router-dom'
+import Menu from './Menu'
 
-import Tabs from './pages/Tabs';
+import Tabs from './pages/Tabs'
 
-window.matchMedia("(prefers-color-scheme: dark)").addListener(async (status) => {
-  try {
-    await StatusBar.setStyle({
-      style: status.matches ? Style.Dark : Style.Light,
-    });
-  } catch {}
-});
+// window.matchMedia("(prefers-color-scheme: dark)").addListener(async (status) => {
+//   try {
+//     await StatusBar.setStyle({
+//       style: status.matches ? Style.Dark : Style.Light,
+//     });
+//   } catch {}
+// });
 
 const AppShell = () => {
   return (
@@ -28,7 +28,7 @@ const AppShell = () => {
         </IonSplitPane>
       </IonReactRouter>
     </IonApp>
-  );
-};
+  )
+}
 
-export default AppShell;
+export default AppShell
