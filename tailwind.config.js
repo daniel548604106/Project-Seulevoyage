@@ -5,6 +5,7 @@ module.exports = {
     './src/modules/**/*.{js,ts,jsx,tsx}',
     './styles/**/*.{scss,module.scss}',
   ],
+  mode: 'jit',
   darkMode: 'media',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',

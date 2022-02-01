@@ -1,14 +1,7 @@
 # Next.js + Tailwind CSS + Ionic Framework + Capacitor Mobile Starter
 
-![Screenshot](./screenshot.png)
-
-This repo is a conceptual starting point for building an iOS, Android, and Progressive Web App with Next.js, Tailwind CSS, [Ionic Framework](https://ionicframework.com/), and [Capacitor](https://capacitorjs.com/).
-
-Next.js handles the production React app experience, Tailwind can be used to style each page of your app, Ionic Framework provides the cross-platform system controls (navigation/transitions/tabs/etc.), and then Capacitor bundles all of it up and runs it on iOS, Android, and Web with full native access.
-
-See this blog post for an overview of the stack and how it all works: https://dev.to/ionic/build-mobile-apps-with-tailwind-css-next-js-ionic-framework-and-capacitor-3kij
-
-Please note: this repo isn't quite production ready as-is. Users will want to configure tailwind purging as a first step, and note SSR is currently disabled for the Next.js app as the app will be fully client-side rendered for iOS and Android. This is a limitation we are working to address in a future update.
+Google Travel API
+https://developers.google.com/hotels/hotel-prices/api-reference
 
 ## Usage
 
@@ -52,7 +45,7 @@ Note: this configuration wil be easier in Capacitor 3 which [recently went into 
 
 One caveat with this project: Because the app must be able to run purely client-side and use [Next.js's Export command](https://nextjs.org/docs/advanced-features/static-html-export), that means no Server Side Rendering in this code base. There is likely a way to SSR and a fully static Next.js app in tandem but it requires [a Babel plugin](https://github.com/erzr/next-babel-conditional-ssg-ssr) or would involve a more elaborate monorepo setup with code sharing that is out of scope for this project.
 
-Additionally, Next.js routing is not really used much in this app beyond a catch-all route to render the native app shell and engage the Ionic React Router. This is primarily because Next.js routing is not set up to enable native-style transitions and history state management like the kind Ionic uses. 
+Additionally, Next.js routing is not really used much in this app beyond a catch-all route to render the native app shell and engage the Ionic React Router. This is primarily because Next.js routing is not set up to enable native-style transitions and history state management like the kind Ionic uses.
 
 ## What is Capacitor?
 
