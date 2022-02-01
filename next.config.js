@@ -3,4 +3,8 @@ module.exports = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  env: {
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
+    GOOGLE_TRAVEL_API: process.env.GOOGLE_TRAVEL_API,
+  },
 }
