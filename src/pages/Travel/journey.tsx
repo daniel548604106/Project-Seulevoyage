@@ -65,7 +65,7 @@ const Journey = () => {
           </div>
         </div>
         <div className="sticky top-[50px]">
-          <ul className="flex items-center justify-between  mx-5 py-2">
+          <ul className="flex items-center justify-between  mx-5 py-3">
             <li onClick={() => setActiveTab(Tabs.Schedule)}>
               <Image
                 width="20"

@@ -51,13 +51,6 @@ const Map = () => {
       >
         <></>
       </GoogleMap>
-      <IonModal
-        isOpen={showModal}
-        breakpoints={[0, 0.5, 1]}
-        onDidDismiss={() => setShowModal(false)}
-      >
-        <p>This is modal content</p>
-      </IonModal>
     </div>
   ) : (
     <></>

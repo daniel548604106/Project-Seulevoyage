@@ -3,6 +3,15 @@
 Google Travel API
 https://developers.google.com/hotels/hotel-prices/api-reference
 
+Places APIs
+
+有遇到 CORS error
+
+## plugins
+
+React-Sortable
+https://www.npmjs.com/package/react-sortablejs
+
 ## Usage
 
 This project is a standard Next.js app, so the typical Next.js development process applies (`npm run dev` for browser-based development). However, there is one caveat: the app must be exported to deploy to iOS and Android, since it must run purely client-side. ([more on Next.js export](https://nextjs.org/docs/advanced-features/static-html-export))
