@@ -3,12 +3,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export interface CommonState {
   value: number
   isLoggedIn: boolean
+  isLoading: boolean
   isOnBoardingModalOpen: boolean
 }
 
 const initialState: CommonState = {
   value: 0,
   isLoggedIn: false,
+  isLoading: false,
   isOnBoardingModalOpen: true,
 }
 

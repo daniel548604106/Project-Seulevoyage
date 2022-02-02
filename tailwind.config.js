@@ -13,6 +13,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'login-bg': "url('/img/login/login-bg.jpg')",
+      },
       colors: {
         pink: 'var(--main-pink)',
         orange: 'var(--main-orange)',
