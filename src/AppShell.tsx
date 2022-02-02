@@ -1,11 +1,12 @@
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react'
-import { StatusBar, Style } from '@capacitor/status-bar'
+import { Redirect, Route } from 'react-router-dom';
 
-import { IonReactRouter } from '@ionic/react-router'
-import { Redirect, Route } from 'react-router-dom'
-import Menu from './Menu'
+import OnBoarding from '@/components/Onboarding/Index';
+import { StatusBar, Style } from '@capacitor/status-bar';
+import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 
-import Tabs from './pages/Tabs'
+import Menu from './Menu';
+import Tabs from './pages/Tabs';
 
 // window.matchMedia("(prefers-color-scheme: dark)").addListener(async (status) => {
 //   try {
@@ -21,9 +22,9 @@ const AppShell = () => {
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />
+          <OnBoarding />
           <IonRouterOutlet id="main">
-            <Route path="/tabs" render={() => <Tabs />} />
-            <Route exact path="/" render={() => <Redirect to="/tabs" />} />
+            <Route path="/" render={() => <Tabs />} />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

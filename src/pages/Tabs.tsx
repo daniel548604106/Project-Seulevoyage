@@ -1,69 +1,59 @@
-import { Redirect, Route } from 'react-router-dom'
-import {
-  IonRouterOutlet,
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-} from '@ionic/react'
-import { IonReactRouter } from '@ionic/react-router'
-import routes from '@/routes/index.jsx'
-import style from './tabs.module.scss'
-import { useSelector } from 'react-redux'
-import { matchPath } from 'react-router'
+import { matchPath } from 'react-router';
+import { Redirect, Route } from 'react-router-dom';
+
+import { useAppSelector } from '@/hooks/redux';
+import routes from '@/routes/index';
+import { IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+
+import style from './tabs.module.scss';
 
 const tabRoutes = [
   {
     icon: '/img/tabs/home.svg',
     label: 'Home',
-    href: '/tabs/home',
+    href: '/home',
     tab: 'home',
     requiresAuth: false,
   },
   {
     icon: '/img/tabs/explore.svg',
     label: 'Explore',
-    href: '/tabs/explore',
+    href: '/explore',
     tab: 'explore',
     requiresAuth: false,
   },
   {
     icon: '/img/tabs/travel.svg',
     label: 'Travel',
-    href: '/tabs/travel',
+    href: '/travel',
     tab: 'travel',
     requiresAuth: true,
   },
   {
     icon: '/img/tabs/gallery.svg',
     label: 'Gallery',
-    href: '/tabs/gallery',
+    href: '/gallery',
     tab: 'gallery',
     requiresAuth: true,
   },
   {
     icon: '/img/tabs/account.svg',
     label: 'Account',
-    href: '/tabs/account',
+    href: '/account',
     tab: 'account',
     requiresAuth: true,
   },
 ]
 
 const Tabs = () => {
-  const isLoggedIn = useSelector((state) => state.common.isLoggedIn)
+  const isLoggedIn = useAppSelector((state) => state.common.isLoggedIn)
   return (
     <IonTabs className={style['tabs-root']}>
       <IonRouterOutlet>
         {routes.map(({ path, component, exact }) => (
           <Route key={path} path={path} component={component} exact={exact} />
         ))}
-        <Route
-          path="/tabs"
-          render={() => <Redirect to="/tabs/feed" />}
-          exact={true}
-        />
       </IonRouterOutlet>
       <IonTabBar className={`${style['tabs-bar']} `} slot="bottom">
         {tabRoutes.map(({ href, label, icon, tab, requiresAuth }) => (

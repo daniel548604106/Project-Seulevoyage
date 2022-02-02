@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export interface CommonState {
   value: number
   isLoggedIn: boolean
+  isOnBoardingModalOpen: boolean
 }
 
 const initialState: CommonState = {
   value: 0,
-  isLoggedIn: true,
+  isLoggedIn: false,
+  isOnBoardingModalOpen: true,
 }
 
 export const commonSlice = createSlice({
@@ -22,8 +24,12 @@ export const commonSlice = createSlice({
       // immutable state based off those changes
       state.value += 1
     },
+
     decrement: (state) => {
       state.value -= 1
+    },
+    setOnBoardingModalOpen: (state, action: PayloadAction<boolean>) => {
+      state.isOnBoardingModalOpen = action.payload
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload
@@ -32,6 +38,11 @@ export const commonSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = commonSlice.actions
+export const {
+  increment,
+  decrement,
+  incrementByAmount,
+  setOnBoardingModalOpen,
+} = commonSlice.actions
 
 export default commonSlice.reducer

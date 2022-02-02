@@ -5,19 +5,19 @@ import List from '@/pages/Lists.jsx';
 import Login from '@/pages/Login/index';
 
 const routes = [
-  { path: '/tabs/home', component: Home, exact: true },
+  { path: '/home', component: Home, exact: true },
   {
-    path: '/tabs/explore',
+    path: '/explore',
     component: List,
     exact: true,
   },
   {
-    path: '/tabs/lists/:listId',
+    path: '/lists/:listId',
     component: ListDetail,
     exact: true,
   },
   {
-    path: '/tabs/account',
+    path: '/account',
     component: Account,
     exact: true,
   },
