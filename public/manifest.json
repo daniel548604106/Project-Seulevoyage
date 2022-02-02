@@ -1,0 +1,32 @@
+{
+  "name": "SeuleVoyage",
+  "app_name": "SeuleVoyage",
+  "theme_color": "#d45071",
+  "description": "Next Generation eCommerce Solutions for SeuleVoyage",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/192.png",
+      "sizes": "192x",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/256.png",
+      "sizes": "256x",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/512.png",
+      "sizes": "512x",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/1024.png",
+      "sizes": "1024x",
+      "type": "image/png"
+    }
+  ]
+}

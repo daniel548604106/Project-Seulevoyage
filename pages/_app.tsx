@@ -28,6 +28,15 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable='no'"
         ></meta>
+        <meta name="description" content="Description" />
+        <meta name="keywords" content="Keywords" />
+        <title>SeuleVoyage</title>
+        <link rel="manifest" href="/manifest.json" />
+        <link href="/icons/72.png" rel="icon" type="image/png" sizes="16x16" />
+        <link href="/icons/80.png" rel="icon" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/icons/512.png"/>
+        <meta name="theme-color" content="white" />
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/icons/1024.png"/>
       </Head>
       <Provider store={store}>
         <Component {...pageProps} />

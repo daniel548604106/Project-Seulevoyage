@@ -22,6 +22,18 @@ vercel
 React-Sortable
 https://www.npmjs.com/package/react-sortablejs
 
+## PWA
+
+command
+
+```
+npm i next-pwa
+```
+
+- Generator Manifest
+  https://app-manifest.firebaseapp.com/
+  https://appsco.pe/developer/splash-screens
+
 ## Usage
 
 This project is a standard Next.js app, so the typical Next.js development process applies (`npm run dev` for browser-based development). However, there is one caveat: the app must be exported to deploy to iOS and Android, since it must run purely client-side. ([more on Next.js export](https://nextjs.org/docs/advanced-features/static-html-export))
