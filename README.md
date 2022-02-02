@@ -32,7 +32,10 @@ npm i next-pwa
 
 - Generator Manifest
   https://app-manifest.firebaseapp.com/
-  https://appsco.pe/developer/splash-screens
+  - PWA Icon generator
+    https://www.pwabuilder.com/imageGenerator
+  - Splash Screen Generator
+    https://appsco.pe/developer/splash-screens
 
 ## Usage
 
