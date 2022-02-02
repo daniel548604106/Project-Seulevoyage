@@ -9,6 +9,7 @@
       "@/routes/*": ["routes/*"],
       "@/modules/*": ["modules/*"],
       "@/sagas/*": ["redux/sagas/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/slices/*": ["redux/slices/*"]
     },
     "target": "es5",

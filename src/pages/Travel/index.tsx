@@ -4,14 +4,11 @@ import IonCustomContent from 'modules/IonCustomContent';
 import Navigation from 'modules/Navigation';
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { postJourney, setJourneyUploadStatus } from '@/redux/slices/travelSlice';
-import {
-    IonButton, IonContent, IonFab, IonHeader, IonLabel, IonModal, IonPage, IonSegment,
-    IonSegmentButton
-} from '@ionic/react';
+import { IonHeader, IonLabel, IonModal, IonPage, IonSegment, IonSegmentButton } from '@ionic/react';
 
 import Date from './components/Date';
 import Destination from './components/Destination';
@@ -71,11 +68,12 @@ const ModalHeader = (props: ModalHeaderProps) => {
 }
 
 const Travel = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const history = useHistory()
-  const journeyUploadStatus = useSelector(
+  const journeyUploadStatus = useAppSelector(
     (state) => state.travel.journeyUploadStatus
   )
+
   const [selectedSegment, setSelectedSegment] = useState('future')
   const [isCreateModalOpen, setCreateModalOpen] = useState(false)
   const [isButtonDisabled, setButtonDisabled] = useState('')

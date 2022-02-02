@@ -7,6 +7,16 @@ Places APIs
 
 有遇到 CORS error
 
+## Deploy
+
+- Deploy with vercel
+
+command
+
+```
+vercel
+```
+
 ## plugins
 
 React-Sortable
