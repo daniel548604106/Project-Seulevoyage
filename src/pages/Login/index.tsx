@@ -24,7 +24,7 @@ const Login = () => {
   return (
     <IonPage>
       <IonContent className="">
-        <div className=" px-6 font-semibold bg-login-bg w-full h-[100vh] flex flex-col items-center pt-10 pb-5">
+        <div className=" px-6 font-semibold bg-login-bg w-full overflow-y-auto h-[calc(100vh-50px)] flex flex-col items-center pt-10 pb-5">
           <Image width="100" height="100" src="/img/logo.svg" alt="logo" />
           <div className="mt-3 w-full text-left">
             <h2 className="text-2xl  text-white">
@@ -117,7 +117,7 @@ const Login = () => {
             />
             <span>Facebook</span>
           </button>
-          <p className="mt-5 text-white">
+          <p className="absolute bottom-4 text-white">
             I’m a new user,{' '}
             <button
               onClick={() => history.replace('/signup')}

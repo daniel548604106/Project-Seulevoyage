@@ -22,7 +22,7 @@ const Signup = () => {
   return (
     <IonPage>
       <IonContent className="">
-        <div className=" px-6 font-semibold bg-login-bg w-full h-[100vh-50px] flex flex-col items-center pt-10 pb-5">
+        <div className=" px-6 font-semibold bg-login-bg w-full h-[calc(100vh-50px)] flex flex-col items-center pt-10 pb-5">
           <Image width="100" height="100" src="/img/logo.svg" alt="logo" />
           <div className="mt-8 bg-white rounded-md w-full flex items-center py-3 px-4">
             <Image

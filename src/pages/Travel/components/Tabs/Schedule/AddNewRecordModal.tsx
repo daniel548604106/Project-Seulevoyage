@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 
+import Slider from '@/modules/Slider';
 import {
     IonIcon, IonInput, IonModal, IonSelect, IonSelectOption, IonSlide, IonSlides
 } from '@ionic/react';
@@ -109,7 +110,7 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
   return (
     <div>
       <IonModal
-        cssClass="h-[100vh] flex flex-col bottom-0 fixed z-50 pt-[100px] rounded-t-xl"
+        cssClass="h-[100vh] flex flex-col bottom-0 fixed z-50 pt-[50px] rounded-t-lg"
         showBackdrop
         isOpen={isAddNewRecordModalOpen}
       >
@@ -158,20 +159,31 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
               </div>
             )}
           </div>
-          <IonSlides pager={true}>
-            <IonSlide className="w-screen">
-              <ul className="px-3 w-full py-3 bg-gray-700 h-[200px] grid grid-cols-5 grid-rows-2">
-                <li>s</li>
-                <li>2</li>
-              </ul>
-            </IonSlide>
-            <IonSlide className="w-screen">
-              <ul className="px-3 w-full py-3 bg-gray-700 h-[200px] grid grid-cols-5 grid-rows-2">
-                <li>s</li>
-                <li>2</li>
-              </ul>
-            </IonSlide>
-          </IonSlides>
+          <div className="w-screen">
+            <Slider
+              onSwiper={(swiper) => console.log(swiper)}
+              slides={[
+                {
+                  id: '1',
+                  component: (
+                    <ul className="px-3 w-full py-3 bg-gray-200 h-[200px] grid grid-cols-5 grid-rows-2">
+                      <li>s</li>
+                      <li>2</li>
+                    </ul>
+                  ),
+                },
+                {
+                  id: '2',
+                  component: (
+                    <ul className="px-3 w-full py-3 bg-gray-200 h-[200px] grid grid-cols-5 grid-rows-2">
+                      <li>s</li>
+                      <li>2</li>
+                    </ul>
+                  ),
+                },
+              ]}
+            />
+          </div>
 
           <div className="flex items-center justify-between py-3 px-2">
             <button>CASH</button>
