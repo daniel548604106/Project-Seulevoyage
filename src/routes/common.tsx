@@ -7,7 +7,7 @@ import Login from '@/pages/Login/index';
 import Signup from '@/pages/Signup/index';
 
 const routes = [
-  { path: '/home', component: Home, exact: true },
+  { path: '/', component: Home, exact: true },
   {
     path: '/explore',
     component: List,

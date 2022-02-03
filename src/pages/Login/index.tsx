@@ -2,12 +2,14 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { useAppDispatch } from '@/hooks/redux';
 import Button from '@/modules/Button';
-import IonCustomContent from '@/modules/IonCustomContent';
-import { IonContent, IonItemDivider, IonLabel, IonPage } from '@ionic/react';
+import { setIsLoggedIn } from '@/redux/slices/commonSlice';
+import { IonContent, IonPage } from '@ionic/react';
 
 const Login = () => {
   const history = useHistory()
+  const dispatch = useAppDispatch()
   const [formValue, setFormValue] = useState({
     account: '',
     password: '',
@@ -22,7 +24,7 @@ const Login = () => {
   return (
     <IonPage>
       <IonContent className="">
-        <div className=" px-6 font-semibold bg-login-bg w-full h-[100vh-50px] flex flex-col items-center pt-10 pb-5">
+        <div className=" px-6 font-semibold bg-login-bg w-full h-[100vh] flex flex-col items-center pt-10 pb-5">
           <Image width="100" height="100" src="/img/logo.svg" alt="logo" />
           <div className="mt-3 w-full text-left">
             <h2 className="text-2xl  text-white">
@@ -84,7 +86,13 @@ const Login = () => {
             Forgot Password?
           </button>
           <div className="mt-3 w-full text-lg">
-            <Button onClick={() => console.log('clicked')} text="Login" />
+            <Button
+              onClick={() => {
+                dispatch(setIsLoggedIn(true))
+                history.push('/')
+              }}
+              text="Login"
+            />
           </div>
           <div className="flex items-center w-full mt-6 text-white">
             <div className="w-full h-[1px] bg-white"></div>
@@ -109,7 +117,7 @@ const Login = () => {
             />
             <span>Facebook</span>
           </button>
-          <p className="absolute bottom-4">
+          <p className="mt-5 text-white">
             I’m a new user,{' '}
             <button
               onClick={() => history.replace('/signup')}

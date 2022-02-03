@@ -18,7 +18,9 @@ export const commonSlice = createSlice({
   name: 'common',
   initialState,
   reducers: {
-    setLoggedIn: (state) => {},
+    setIsLoggedIn: (state, action: PayloadAction<boolean>) => {
+      state.isLoggedIn = action.payload
+    },
     increment: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
@@ -43,6 +45,7 @@ export const commonSlice = createSlice({
 export const {
   increment,
   decrement,
+  setIsLoggedIn,
   incrementByAmount,
   setOnBoardingModalOpen,
 } = commonSlice.actions

@@ -30,7 +30,7 @@ const Button = (props: ButtonProps) => {
       style={{ width, height }}
       onClick={onClick}
       disabled={disabled}
-      className={`rounded-full w-full p-5 shadow-lg  ${
+      className={`rounded-full w-full p-4 shadow-lg  ${
         disabled
           ? 'text-black bg-transparent border'
           : 'bg-gradient-to-r from-orange to-pink text-white '

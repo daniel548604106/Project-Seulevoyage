@@ -78,7 +78,7 @@ const Destination = () => {
             <Image width="20" height="20" src={searchOutline} alt="search" />
           </IonItem>
         </div>
-        <div className="flex items-center flex-nowrap whitespace-nowrap w-full overflow-x-auto mb-3">
+        <div className="flex items-center flex-nowrap whitespace-nowrap w-full overflow-x-auto py-2 mb-3">
           {selectedDestinations.map(({ text, id }) => (
             <div key={id} className="mr-1">
               <Tag
@@ -98,7 +98,7 @@ const Destination = () => {
           {Cities.map(({ name, img, id }, index) => (
             <div
               onClick={() => handleCardClick({ name, id })}
-              className={`relative `}
+              className={`relative w-full pb-[100%] `}
               key={id}
             >
               <span
@@ -120,8 +120,7 @@ const Destination = () => {
                   selectedDestinations.map(({ id }) => id).indexOf(id) !== -1 &&
                   'opacity-50'
                 }`}
-                width="100%"
-                height="100%"
+                layout="fill"
                 src={img}
                 alt={name}
               />

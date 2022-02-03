@@ -12,7 +12,7 @@ const tabRoutes = [
   {
     icon: '/img/tabs/home.svg',
     label: 'Home',
-    href: '/home',
+    href: '/',
     tab: 'home',
     requiresAuth: false,
   },

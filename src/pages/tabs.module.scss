@@ -13,6 +13,9 @@
     &[selected='true'] {
       color: var(--main-pink);
     }
+    &__icon {
+      @apply w-6 h-6;
+    }
     &__label {
       @apply text-xs transform;
     }

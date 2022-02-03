@@ -110,7 +110,7 @@ const Travel = () => {
     if (journeyUploadStatus === 'success') {
       setCreateModalOpen(false)
       dispatch(setJourneyUploadStatus(null))
-      history.push(`/tabs/travel/journeys/${journeyId}`)
+      history.push(`/travel/journeys/${journeyId}`)
     }
   }, [journeyUploadStatus])
 
@@ -124,8 +124,8 @@ const Travel = () => {
         <Navigation title="Travel" />
       </IonHeader>
       <IonCustomContent className="relative">
-        <div className="min-h-screen">
-          <div className="h-full flex flex-col">
+        <div className="">
+          <div className="h-[calc(100vh-150px)] flex flex-col">
             <IonSegment
               value={selectedSegment}
               onIonChange={(e) => setSelectedSegment(e.detail.value)}
