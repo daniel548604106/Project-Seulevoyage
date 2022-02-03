@@ -31,6 +31,7 @@ npm i next-pwa
 ```
 
 - Generator Manifest
+  https://www.letswrite.tw/pwa-manifest/
   https://app-manifest.firebaseapp.com/
   - PWA Icon generator
     https://www.pwabuilder.com/imageGenerator
