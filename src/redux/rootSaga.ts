@@ -1,7 +1,7 @@
-import { all, fork } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects'
 
-import * as commonSagas from '@/sagas/commonSagas';
-import * as travelSagas from '@/sagas/travelSagas';
+import * as commonSagas from '@/sagas/commonSagas'
+import * as travelSagas from '@/sagas/travelSagas'
 
 export default function* rootSaga() {
   yield all(

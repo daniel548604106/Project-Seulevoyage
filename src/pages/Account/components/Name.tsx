@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const Name = () => {
-  return <div>name</div>;
-};
+  return <div>name</div>
+}
 
-export default Name;
+export default Name

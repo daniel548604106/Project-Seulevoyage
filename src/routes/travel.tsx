@@ -1,5 +1,5 @@
-import Travel from '@/pages/Travel';
-import Journey from '@/pages/Travel/journey';
+import Travel from '@/pages/Travel'
+import Journey from '@/pages/Travel/journey'
 
 const routes = [
   { path: '/travel', component: Travel, exact: true },

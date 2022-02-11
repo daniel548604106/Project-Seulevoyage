@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import Image from 'next/image'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import Button from '@/modules/Button';
-import { IonContent, IonPage } from '@ionic/react';
+import Button from '@/modules/Button'
+import { IonContent, IonPage } from '@ionic/react'
 
 const Signup = () => {
   const history = useHistory()
@@ -22,9 +22,9 @@ const Signup = () => {
   return (
     <IonPage>
       <IonContent className="">
-        <div className=" px-6 font-semibold bg-login-bg w-full h-[calc(100vh-50px)] flex flex-col items-center pt-10 pb-5">
+        <div className="h-[calc(100vh-50px)] flex flex-col items-center pb-5 pt-10 px-6 w-full font-semibold bg-login-bg">
           <Image width="100" height="100" src="/img/logo.svg" alt="logo" />
-          <div className="mt-8 bg-white rounded-md w-full flex items-center py-3 px-4">
+          <div className="flex items-center mt-8 px-4 py-3 w-full bg-white rounded-md">
             <Image
               width="20"
               height="20"
@@ -36,11 +36,11 @@ const Signup = () => {
               value={formValue.username}
               name="username"
               onChange={(e) => handleInputChange(e)}
-              className="w-full py-1 px-3 text-black outline-none bg-transparent"
+              className="px-3 py-1 w-full text-black bg-transparent outline-none"
               type="text"
             />
           </div>
-          <div className="mt-4 bg-white rounded-md w-full flex items-center py-3 px-4">
+          <div className="flex items-center mt-4 px-4 py-3 w-full bg-white rounded-md">
             <Image
               width="20"
               height="20"
@@ -52,11 +52,11 @@ const Signup = () => {
               value={formValue.account}
               name="account"
               onChange={(e) => handleInputChange(e)}
-              className="w-full py-1 px-3 text-black outline-none bg-transparent"
+              className="px-3 py-1 w-full text-black bg-transparent outline-none"
               type="email"
             />
           </div>
-          <div className="mt-4 bg-white rounded-md w-full flex items-center py-3 px-4">
+          <div className="flex items-center mt-4 px-4 py-3 w-full bg-white rounded-md">
             <Image
               width="20"
               height="20"
@@ -68,7 +68,7 @@ const Signup = () => {
               value={formValue.password}
               name="password"
               onChange={(e) => handleInputChange(e)}
-              className="w-full py-1 px-3 text-black outline-none "
+              className="px-3 py-1 w-full text-black outline-none"
               type={isPasswordVisible ? 'password' : 'text'}
             />
             <div
@@ -90,14 +90,14 @@ const Signup = () => {
           <div className="mt-3 w-full text-lg">
             <Button onClick={() => console.log('clicked')} text="Sign Up" />
           </div>
-          <div className="flex items-center w-full mt-6 text-white">
-            <div className="w-full h-[1px] bg-white"></div>
-            <p className="min-w-[150px] text-center mx-[20px]">
+          <div className="flex items-center mt-6 w-full text-white">
+            <div className="h-[1px] w-full bg-white"></div>
+            <p className="min-w-[150px] mx-[20px] text-center">
               Or Signup with
             </p>
-            <div className="w-full h-[1px] bg-white"></div>
+            <div className="h-[1px] w-full bg-white"></div>
           </div>
-          <button className="w-full bg-white text-black py-3 rounded-lg flex items-center justify-center mt-4 space-x-2">
+          <button className="flex items-center justify-center mt-4 py-3 w-full text-black bg-white rounded-lg space-x-2">
             <Image
               width="25"
               height="25"
@@ -106,7 +106,7 @@ const Signup = () => {
             />
             <span>Google</span>
           </button>
-          <button className="w-full bg-white text-black py-3 rounded-lg flex items-center justify-center mt-4  space-x-2">
+          <button className="flex items-center justify-center mt-4 py-3 w-full text-black bg-white rounded-lg space-x-2">
             <Image
               width="25"
               height="25"
@@ -119,7 +119,7 @@ const Signup = () => {
             Let's get it going,{' '}
             <button
               onClick={() => history.replace('/login')}
-              className="underline cursor-pointer text-pink"
+              className="text-pink underline cursor-pointer"
             >
               Login
             </button>

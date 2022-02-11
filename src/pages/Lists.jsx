@@ -1,5 +1,5 @@
-import Store from '../redux';
-import * as selectors from '../redux/selectors';
+import Store from '../redux'
+import * as selectors from '../redux/selectors'
 
 import {
   IonPage,
@@ -9,16 +9,16 @@ import {
   IonContent,
   IonItem,
   IonLabel,
-} from '@ionic/react';
+} from '@ionic/react'
 
 const ListEntry = ({ list, ...props }) => (
   <IonItem routerLink={`/tabs/lists/${list.id}`} className="list-entry">
     <IonLabel>{list.name}</IonLabel>
   </IonItem>
-);
+)
 
 const AllLists = ({ onSelect }) => {
-  const lists = Store.useState(selectors.getLists);
+  const lists = Store.useState(selectors.getLists)
 
   return (
     <>
@@ -26,8 +26,8 @@ const AllLists = ({ onSelect }) => {
         <ListEntry list={list} key={i} />
       ))}
     </>
-  );
-};
+  )
+}
 
 const Lists = () => {
   return (
@@ -46,7 +46,7 @@ const Lists = () => {
         <AllLists />
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
-export default Lists;
+export default Lists

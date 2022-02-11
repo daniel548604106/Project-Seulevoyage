@@ -1,11 +1,11 @@
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware from 'redux-saga'
 
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import rootSaga from './rootSaga';
-import commonReducer from './slices/commonSlice';
-import counterReducer from './slices/counterSlice';
-import travelReducer from './slices/travelSlice';
+import rootSaga from './rootSaga'
+import commonReducer from './slices/commonSlice'
+import counterReducer from './slices/counterSlice'
+import travelReducer from './slices/travelSlice'
 
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware]

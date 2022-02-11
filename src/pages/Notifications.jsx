@@ -10,11 +10,11 @@ import {
   IonItem,
   IonNote,
   IonLabel,
-} from '@ionic/react';
-import Store from '../redux';
-import { getNotifications } from '../redux/selectors';
+} from '@ionic/react'
+import Store from '../redux'
+import { getNotifications } from '../redux/selectors'
 
-import { close } from 'ionicons/icons';
+import { close } from 'ionicons/icons'
 
 const NotificationItem = ({ notification }) => (
   <IonItem>
@@ -24,17 +24,22 @@ const NotificationItem = ({ notification }) => (
       <IonIcon icon={close} />
     </IonButton>
   </IonItem>
-);
+)
 
 const Notifications = ({ open, onDidDismiss }) => {
-  const notifications = Store.useState(getNotifications);
+  const notifications = Store.useState(getNotifications)
 
   return (
     <IonModal isOpen={open} onDidDismiss={onDidDismiss}>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Notifications</IonTitle>
-          <IonButton slot="end" fill="clear" color="dark" onClick={onDidDismiss}>
+          <IonButton
+            slot="end"
+            fill="clear"
+            color="dark"
+            onClick={onDidDismiss}
+          >
             <IonIcon icon={close} />
           </IonButton>
         </IonToolbar>
@@ -52,7 +57,7 @@ const Notifications = ({ open, onDidDismiss }) => {
         </IonList>
       </IonContent>
     </IonModal>
-  );
-};
+  )
+}
 
-export default Notifications;
+export default Notifications

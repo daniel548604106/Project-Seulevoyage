@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from 'next/image'
+import React from 'react'
 
-import { IonBackButton, IonButtons, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButtons, IonTitle, IonToolbar } from '@ionic/react'
 
 interface NavigationProps {
   title: string
@@ -17,7 +17,7 @@ const Navigation = (props: NavigationProps) => {
   const { title, customStyle = '', leftIcon, rightTools } = props
   return (
     <div
-      className={`${customStyle} py-3 px-2 flex items-center justify-between`}
+      className={`${customStyle} py-4 px-6 flex items-center justify-between`}
     >
       <button onClick={() => leftIcon?.onClick()}>
         {leftIcon?.icon ? (

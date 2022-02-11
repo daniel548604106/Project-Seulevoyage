@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import IonCustomContent from '@/modules/IonCustomContent';
-import { IonButton, IonButtons, IonDatetime } from '@ionic/react';
+import IonCustomContent from '@/modules/IonCustomContent'
+import { IonButton, IonButtons, IonDatetime } from '@ionic/react'
 
 const Date = () => {
   const confirm = () => console.log('ihi')
@@ -10,7 +10,7 @@ const Date = () => {
 
   return (
     <IonCustomContent>
-      <div className=" h-full">
+      <div className="h-full">
         danie
         <IonDatetime
           value={selectedDate}

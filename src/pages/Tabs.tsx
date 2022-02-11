@@ -1,12 +1,19 @@
-import { matchPath } from 'react-router';
-import { Redirect, Route } from 'react-router-dom';
+import { matchPath } from 'react-router'
+import { Redirect, Route } from 'react-router-dom'
 
-import { useAppSelector } from '@/hooks/redux';
-import routes from '@/routes/index';
-import { IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { useAppSelector } from '@/hooks/redux'
+import routes from '@/routes/index'
+import {
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+} from '@ionic/react'
+import { IonReactRouter } from '@ionic/react-router'
 
-import style from './tabs.module.scss';
+import style from './tabs.module.scss'
 
 const tabRoutes = [
   {

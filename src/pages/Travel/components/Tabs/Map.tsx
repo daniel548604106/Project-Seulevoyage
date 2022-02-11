@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
-import { IonContent, IonModal, IonSearchbar } from '@ionic/react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { IonContent, IonModal, IonSearchbar } from '@ionic/react'
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
 const containerStyle = {
   width: '400px',

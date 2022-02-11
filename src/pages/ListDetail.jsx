@@ -10,11 +10,11 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-} from '@ionic/react';
+} from '@ionic/react'
 
-import Store from '../redux';
-import * as actions from '../redux/actions';
-import * as selectors from '../redux/selectors';
+import Store from '../redux'
+import * as actions from '../redux/actions'
+import * as selectors from '../redux/selectors'
 
 const ListItems = ({ list }) => {
   return (
@@ -23,22 +23,22 @@ const ListItems = ({ list }) => {
         <ListItemEntry list={list} item={item} key={key} />
       ))}
     </IonList>
-  );
-};
+  )
+}
 
 const ListItemEntry = ({ list, item }) => (
   <IonItem onClick={() => actions.setDone(list, item, !item.done)}>
     <IonLabel>{item.name}</IonLabel>
     <IonCheckbox checked={item.done || false} slot="end" />
   </IonItem>
-);
+)
 
 const ListDetail = ({ match }) => {
-  const lists = Store.useState(selectors.getLists);
+  const lists = Store.useState(selectors.getLists)
   const {
     params: { listId },
-  } = match;
-  const loadedList = lists.find(l => l.id === listId);
+  } = match
+  const loadedList = lists.find((l) => l.id === listId)
 
   return (
     <IonPage>
@@ -59,7 +59,7 @@ const ListDetail = ({ match }) => {
         <ListItems list={loadedList} />
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
-export default ListDetail;
+export default ListDetail

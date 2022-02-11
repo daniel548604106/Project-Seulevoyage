@@ -1,10 +1,10 @@
-import Account from '@/pages/Account/index';
-import Home from '@/pages/Feed.jsx';
-import ForgetPassword from '@/pages/ForgetPassword';
-import ListDetail from '@/pages/ListDetail.jsx';
-import List from '@/pages/Lists.jsx';
-import Login from '@/pages/Login/index';
-import Signup from '@/pages/Signup/index';
+import Account from '@/pages/Account/index'
+import Home from '@/pages/Feed.jsx'
+import ForgetPassword from '@/pages/ForgetPassword'
+import ListDetail from '@/pages/ListDetail.jsx'
+import List from '@/pages/Lists.jsx'
+import Login from '@/pages/Login/index'
+import Signup from '@/pages/Signup/index'
 
 const routes = [
   { path: '/', component: Home, exact: true },

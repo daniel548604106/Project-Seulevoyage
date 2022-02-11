@@ -1,16 +1,23 @@
-import { calendarOutline, mailOutline } from 'ionicons/icons';
-import AccountInfo from 'modules/AccountInfo';
-import IonCustomContent from 'modules/IonCustomContent';
-import Image from 'next/image';
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { calendarOutline, mailOutline } from 'ionicons/icons'
+import AccountInfo from 'modules/AccountInfo'
+import IonCustomContent from 'modules/IonCustomContent'
+import Image from 'next/image'
+import React from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { setSettings } from '@/redux/actions';
-import Store from '@/redux/index';
-import * as selectors from '@/redux/selectors';
+import { setSettings } from '@/redux/actions'
+import Store from '@/redux/index'
+import * as selectors from '@/redux/selectors'
 import {
-    IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToggle, IonToolbar
-} from '@ionic/react';
+  IonHeader,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonPage,
+  IonTitle,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/react'
 
 const personalInfos = [
   {
@@ -57,7 +64,7 @@ const Settings = () => {
       </IonHeader>
       <IonCustomContent>
         <div>
-          <div className="flex items-center border-b space-x-4 py-4">
+          <div className="flex items-center py-4 border-b space-x-4">
             <Image
               className="rounded-full"
               width="80"

@@ -1,18 +1,25 @@
-import { caretDownOutline } from 'ionicons/icons';
-import Button from 'modules/Button';
-import IonCustomContent from 'modules/IonCustomContent';
-import Navigation from 'modules/Navigation';
-import Image from 'next/image';
-import React, { useCallback, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { caretDownOutline } from 'ionicons/icons'
+import Button from 'modules/Button'
+import IonCustomContent from 'modules/IonCustomContent'
+import Navigation from 'modules/Navigation'
+import Image from 'next/image'
+import React, { useCallback, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { postJourney, setJourneyUploadStatus } from '@/redux/slices/travelSlice';
-import { IonHeader, IonLabel, IonModal, IonPage, IonSegment, IonSegmentButton } from '@ionic/react';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux'
+import { postJourney, setJourneyUploadStatus } from '@/redux/slices/travelSlice'
+import {
+  IonHeader,
+  IonLabel,
+  IonModal,
+  IonPage,
+  IonSegment,
+  IonSegmentButton,
+} from '@ionic/react'
 
-import Date from './components/Date';
-import Destination from './components/Destination';
-import JourneySetting from './components/JourneySetting';
+import Date from './components/Date'
+import Destination from './components/Destination'
+import JourneySetting from './components/JourneySetting'
 
 interface ModalHeaderProps {
   currentStep: number
@@ -147,11 +154,11 @@ const Travel = () => {
               <p className="text-normal font-semibold">
                 You do not have any journey on the list yet!
               </p>
-              <p className="text-sm text-gray-500">Start your journey </p>
+              <p className="text-gray-500 text-sm">Start your journey </p>
               <Image width="15" height="15" src={caretDownOutline} alt="down" />
             </div>
           </div>
-          <div className="absolute bottom-10 right-0 left-0 mx-5">
+          <div className="absolute bottom-10 left-0 right-0 mx-5">
             <Button
               onClick={() => setCreateModalOpen(true)}
               text="Create My Journey"
@@ -170,7 +177,7 @@ const Travel = () => {
           setCurrentStep={setCreationStep}
         />
         {renderModalContent()}
-        <div className="absolute bottom-10 right-0 left-0 mx-5">
+        <div className="absolute bottom-10 left-0 right-0 mx-5">
           <Button
             onClick={() => handleModalButtonClick()}
             text={

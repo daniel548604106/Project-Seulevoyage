@@ -122,6 +122,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
+
       <Script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></Script>
     </>
   )

@@ -1,10 +1,16 @@
-import Image from 'next/image';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import Image from 'next/image'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 
-import Slider from '@/modules/Slider';
+import Slider from '@/modules/Slider'
 import {
-    IonIcon, IonInput, IonModal, IonSelect, IonSelectOption, IonSlide, IonSlides
-} from '@ionic/react';
+  IonIcon,
+  IonInput,
+  IonModal,
+  IonSelect,
+  IonSelectOption,
+  IonSlide,
+  IonSlides,
+} from '@ionic/react'
 
 interface AddNewRecordModalProps {
   isAddNewRecordModalOpen: boolean
@@ -114,8 +120,8 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
         showBackdrop
         isOpen={isAddNewRecordModalOpen}
       >
-        <div className="flex flex-col flex-1">
-          <div className="flex items-center justify-between py-2 px-3">
+        <div className="flex flex-1 flex-col">
+          <div className="flex items-center justify-between px-3 py-2">
             <button
               className="flex items-center"
               onClick={() => setAddNewRecordModalOpen(false)}
@@ -123,16 +129,16 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
               <Image width="30" height="30" src="/img/close.svg" alt="close" />
             </button>
             <button
-              className="bg-gray-800 text-white px-3 py-1 rounded-lg"
+              className="px-3 py-1 text-white bg-gray-800 rounded-lg"
               type="button"
             >
               TODAY
             </button>
             <div className="w-7" />
           </div>
-          <div className="flex items-center px-3 py-2 justify-between">
+          <div className="flex items-center justify-between px-3 py-2">
             <IonSelect
-              className="rounded-full px-5 text-sm bg-gradient-to-r from-orange to-pink  text-white"
+              className="px-5 text-white text-sm bg-gradient-to-r rounded-full from-orange to-pink"
               value="daniel"
               interface="popover"
               placeholder="Select One"
@@ -144,17 +150,17 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
               </IonSelectOption>
               <IonSelectOption value="male">Male</IonSelectOption>
             </IonSelect>
-            <div className="w-[40vw] ">
+            <div className="w-[40vw]">
               <IonInput
                 className="text-right"
                 placeholder="LUNCH (Tap to Edit)"
               />
             </div>
           </div>
-          <div className="px-3 py-2 text-sm relative bg-gray-100 ">
+          <div className="relative px-3 py-2 text-sm bg-gray-100">
             <IonInput placeholder="With you and ..." />
             {searchedUser && (
-              <div className="absolute left-0 z-30 right-0 bg-white py-3 h-[200px] overflow-y-auto px-3 bottom-0 transform translate-y-full shadow-lg">
+              <div className="h-[200px] absolute z-30 bottom-0 left-0 right-0 px-3 py-3 bg-white shadow-lg overflow-y-auto transform translate-y-full">
                 asdsa
               </div>
             )}
@@ -166,7 +172,7 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
                 {
                   id: '1',
                   component: (
-                    <ul className="px-3 w-full py-3 bg-gray-200 h-[200px] grid grid-cols-5 grid-rows-2">
+                    <ul className="h-[200px] grid grid-cols-5 grid-rows-2 px-3 py-3 w-full bg-gray-200">
                       <li>s</li>
                       <li>2</li>
                     </ul>
@@ -175,7 +181,7 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
                 {
                   id: '2',
                   component: (
-                    <ul className="px-3 w-full py-3 bg-gray-200 h-[200px] grid grid-cols-5 grid-rows-2">
+                    <ul className="h-[200px] grid grid-cols-5 grid-rows-2 px-3 py-3 w-full bg-gray-200">
                       <li>s</li>
                       <li>2</li>
                     </ul>
@@ -185,20 +191,20 @@ const AddNewRecordModal = (props: AddNewRecordModalProps) => {
             />
           </div>
 
-          <div className="flex items-center justify-between py-3 px-2">
+          <div className="flex items-center justify-between px-2 py-3">
             <button>CASH</button>
             <div className="flex-1">{operator}</div>
-            <div className="text-3xl flex justify-end items-center">
+            <div className="flex items-center justify-end text-3xl">
               <span className="flex items-center">
                 $
-                <IonInput className="text-right w-[20vw]" value={calcValue} />
+                <IonInput className="w-[20vw] text-right" value={calcValue} />
               </span>
             </div>
           </div>
-          <ul className="bg-gray-900 text-center flex-1 grid grid-cols-4 grid-rows-4 text-white text-xl">
+          <ul className="grid flex-1 grid-cols-4 grid-rows-4 text-center text-white text-xl bg-gray-900">
             {calculatorArray.map(({ value, onClick = null }) => (
               <li
-                className="h-full text-2xl flex items-center justify-center"
+                className="flex items-center justify-center h-full text-2xl"
                 onClick={() => handleCalcPress(value, onClick)}
               >
                 {value}

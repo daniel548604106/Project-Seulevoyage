@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
 
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import Button from '@/modules/Button';
-import Slider from '@/modules/Slider';
-import { setOnBoardingModalOpen } from '@/slices/commonSlice';
-import { IonContent, IonModal } from '@ionic/react';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux'
+import Button from '@/modules/Button'
+import Slider from '@/modules/Slider'
+import { setOnBoardingModalOpen } from '@/slices/commonSlice'
+import { IonContent, IonModal } from '@ionic/react'
 
 const Onboarding = () => {
   const dispatch = useAppDispatch()
@@ -31,8 +31,8 @@ const Onboarding = () => {
             {
               id: '1',
               component: (
-                <div className="min-h-[70vh] space-y-5 px-5 text-center pt-5 pb-10">
-                  <div className="relative w-full pb-[120%] mt-4">
+                <div className="min-h-[70vh] pb-10 pt-5 px-5 text-center space-y-5">
+                  <div className="pb-[120%] relative mt-4 w-full">
                     <Image
                       objectFit="cover"
                       layout="fill"
@@ -40,7 +40,7 @@ const Onboarding = () => {
                       src="/img/onboarding/welcome-1.jpg"
                     />
                   </div>
-                  <h2 className="text-3xl font-semibold mt-4">
+                  <h2 className="mt-4 text-3xl font-semibold">
                     We Connect People
                   </h2>
                   <p>
@@ -53,8 +53,8 @@ const Onboarding = () => {
             {
               id: '2',
               component: (
-                <div className="min-h-[70vh] space-y-5 px-5 text-center pt-5 pb-10">
-                  <div className="relative w-full pb-[120%] mt-4">
+                <div className="min-h-[70vh] pb-10 pt-5 px-5 text-center space-y-5">
+                  <div className="pb-[120%] relative mt-4 w-full">
                     <Image
                       objectFit="cover"
                       layout="fill"
@@ -62,7 +62,7 @@ const Onboarding = () => {
                       src="/img/onboarding/welcome-2.jpg"
                     />
                   </div>
-                  <h2 className="text-3xl font-semibold mt-4">
+                  <h2 className="mt-4 text-3xl font-semibold">
                     Sharing Happiness
                   </h2>
                   <p>
@@ -75,8 +75,8 @@ const Onboarding = () => {
             {
               id: '3',
               component: (
-                <div className="min-h-[70vh] space-y-5 px-5 text-center pt-5 pb-10">
-                  <div className="relative w-full pb-[120%] mt-4">
+                <div className="min-h-[70vh] pb-10 pt-5 px-5 text-center space-y-5">
+                  <div className="pb-[120%] relative mt-4 w-full">
                     <Image
                       objectFit="cover"
                       layout="fill"
@@ -84,7 +84,7 @@ const Onboarding = () => {
                       src="/img/onboarding/welcome-3.jpg"
                     />
                   </div>
-                  <h2 className="text-3xl font-semibold mt-4">
+                  <h2 className="mt-4 text-3xl font-semibold">
                     Last Long Memories
                   </h2>
                   <p>
